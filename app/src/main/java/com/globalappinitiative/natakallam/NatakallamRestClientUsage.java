@@ -5,5 +5,5 @@ package com.globalappinitiative.natakallam;
  */
 
 public class NatakallamRestClientUsage {
-    
+    int a = 0;
 }
