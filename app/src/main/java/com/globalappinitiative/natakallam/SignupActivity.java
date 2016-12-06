@@ -11,6 +11,5 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
     }
 
-    // Postman, OKHttp, Volley
-    // https://guides.codepath.com/android/Consuming-APIs-with-Retrofit
+
 }
