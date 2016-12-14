@@ -1,0 +1,18 @@
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ic_home"
+        title="Home" />
+    <tab
+        id="@+id/tab_payments"
+        icon="@drawable/ic_paypal"
+        title="Payments" />
+    <tab
+        id="@+id/tab_profile"
+        icon="@drawable/ic_profile"
+        title="Profile" />
+    <tab
+        id="@+id/tab_settings"
+        icon="@drawable/ic_settings"
+        title="Settings" />
+</tabs>
