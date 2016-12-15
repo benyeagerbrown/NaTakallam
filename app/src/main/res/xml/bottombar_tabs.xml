@@ -2,17 +2,29 @@
     <tab
         id="@+id/tab_home"
         icon="@drawable/ic_home"
-        title="Home" />
+        title="Home"
+        activeColor="#ffffff"
+        inActiveColor="#d7ccc8"
+        barColorWhenSelected="#3F51B5"/>
     <tab
         id="@+id/tab_payments"
         icon="@drawable/ic_paypal"
-        title="Payments" />
+        title="Payments"
+        activeColor="#ffffff"
+        inActiveColor="#d7ccc8"
+        barColorWhenSelected="#009688"/>
     <tab
         id="@+id/tab_profile"
         icon="@drawable/ic_profile"
-        title="Profile" />
+        title="Profile"
+        activeColor="#ffffff"
+        inActiveColor="#d7ccc8"
+        barColorWhenSelected="#F44336"/>
     <tab
         id="@+id/tab_settings"
         icon="@drawable/ic_settings"
-        title="Settings" />
+        title="Settings"
+        activeColor="#ffffff"
+        inActiveColor="#d7ccc8"
+        barColorWhenSelected="#795548"/>
 </tabs>
