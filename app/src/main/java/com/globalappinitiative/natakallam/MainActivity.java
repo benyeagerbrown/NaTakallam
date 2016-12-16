@@ -1,16 +1,17 @@
 package com.globalappinitiative.natakallam;
 
+
+import android.app.FragmentTransaction;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,16 +22,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(@IdRes int tabId) {
                 if (tabId == R.id.tab_home) {
-                    Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
-                }
-                else if (tabId == R.id.tab_payments) {
-                    Toast.makeText(getApplicationContext(), "Payments", Toast.LENGTH_SHORT).show();
-                }
-                else if (tabId == R.id.tab_profile) {
-                    Toast.makeText(getApplicationContext(), "Profile", Toast.LENGTH_SHORT).show();
-                }
-                else if (tabId == R.id.tab_settings) {
-                    Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                    android.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.contentContainer, new HomeFragment());
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                    ft.commit();
+                } else if (tabId == R.id.tab_payments) {
+                    android.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.contentContainer, new PaymentsFragment());
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                    ft.commit();
+                } else if (tabId == R.id.tab_profile) {
+                    android.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.contentContainer, new ProfileFragment());
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                    ft.commit();
+                } else if (tabId == R.id.tab_settings) {
+                    android.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.contentContainer, new SettingsFragment());
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                    ft.commit();
                 }
             }
         });
