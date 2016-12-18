@@ -4,9 +4,42 @@
     android:layout_height="match_parent"
     tools:context="com.globalappinitiative.natakallam.PaymentsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Payments Fragment" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/paymentsCircle"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/payments_circle" />
+
+            <TextView
+                android:id="@+id/textViewCredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:text="Credits\n100"
+                android:textColor="@android:color/white"
+                android:textAppearance="@android:style/TextAppearance.Large"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/buttonAddCredits"
+            android:theme="@style/AppTheme.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_credits"/>
+    </LinearLayout>
 
 </FrameLayout>

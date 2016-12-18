@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="homeColor">#3F51B5</color>
+    <color name="paymentsColor">#009688</color>
+    <color name="profileColor">#F44336</color>
+    <color name="settingsColor">#795548</color>
+    <color name="tabActiveColor">#ffffff</color>
+    <color name="tabInactiveColor">#d7ccc8</color>
+
 </resources>

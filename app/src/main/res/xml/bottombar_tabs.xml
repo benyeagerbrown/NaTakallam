@@ -3,28 +3,28 @@
         id="@+id/tab_home"
         icon="@drawable/ic_home"
         title="Home"
-        activeColor="#ffffff"
-        inActiveColor="#d7ccc8"
-        barColorWhenSelected="#3F51B5"/>
+        activeColor="@color/tabActiveColor"
+        inActiveColor="@color/tabInactiveColor"
+        barColorWhenSelected="@color/homeColor"/>
     <tab
         id="@+id/tab_payments"
         icon="@drawable/ic_paypal"
         title="Payments"
-        activeColor="#ffffff"
-        inActiveColor="#d7ccc8"
-        barColorWhenSelected="#009688"/>
+        activeColor="@color/tabActiveColor"
+        inActiveColor="@color/tabInactiveColor"
+        barColorWhenSelected="@color/paymentsColor"/>
     <tab
         id="@+id/tab_profile"
         icon="@drawable/ic_profile"
         title="Profile"
-        activeColor="#ffffff"
-        inActiveColor="#d7ccc8"
-        barColorWhenSelected="#F44336"/>
+        activeColor="@color/tabActiveColor"
+        inActiveColor="@color/tabInactiveColor"
+        barColorWhenSelected="@color/profileColor"/>
     <tab
         id="@+id/tab_settings"
         icon="@drawable/ic_settings"
         title="Settings"
-        activeColor="#ffffff"
-        inActiveColor="#d7ccc8"
-        barColorWhenSelected="#795548"/>
+        activeColor="@color/tabActiveColor"
+        inActiveColor="@color/tabInactiveColor"
+        barColorWhenSelected="@color/settingsColor"/>
 </tabs>
