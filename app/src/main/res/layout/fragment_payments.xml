@@ -36,7 +36,7 @@
 
         <Button
             android:id="@+id/buttonAddCredits"
-            android:theme="@style/AppTheme.Button"
+            android:theme="@style/AppTheme.ButtonColored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_credits"/>
