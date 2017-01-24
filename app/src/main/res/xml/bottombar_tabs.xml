@@ -14,12 +14,12 @@
         inActiveColor="@color/tabInactiveColor"
         barColorWhenSelected="@color/paymentsColor"/>
     <tab
-        id="@+id/tab_profile"
-        icon="@drawable/ic_profile"
-        title="Profile"
+        id="@+id/tab_calendar"
+        icon="@drawable/ic_calendar"
+        title="Calendar"
         activeColor="@color/tabActiveColor"
         inActiveColor="@color/tabInactiveColor"
-        barColorWhenSelected="@color/profileColor"/>
+        barColorWhenSelected="@color/calendarColor"/>
     <tab
         id="@+id/tab_settings"
         icon="@drawable/ic_settings"

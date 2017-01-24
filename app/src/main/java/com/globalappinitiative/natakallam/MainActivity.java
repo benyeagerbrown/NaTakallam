@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
                     ft.replace(R.id.contentContainer, new PaymentsFragment());
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                     ft.commit();
-                } else if (tabId == R.id.tab_profile) {
+                } else if (tabId == R.id.tab_calendar) {
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.contentContainer, new ProfileFragment());
+                    ft.replace(R.id.contentContainer, new CalendarFragment());
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                     ft.commit();
                 } else if (tabId == R.id.tab_settings) {
