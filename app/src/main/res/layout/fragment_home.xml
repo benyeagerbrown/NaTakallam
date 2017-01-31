@@ -1,12 +1,67 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.globalappinitiative.natakallam.HomeFragment">
 
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Home Fragment" />
+        android:layout_gravity="center">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:src="@drawable/ic_calendar"
+            app:civ_border_color="@color/homeColor"
+            app:civ_border_width="4dp"
+            app:civ_shadow="false"
+            app:civ_shadow_radius="10"
+            app:civ_shadow_color="#8BC34A"
+            />
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilePicture"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:text="@string/example_profile"
+            />
+
+        <TextView
+            android:id="@+id/nextSession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_below="@id/profileName"
+            android:textSize="20sp"
+            android:text="@string/next_session"
+            />
+
+        <Button
+            android:id="@+id/session_date"
+            android:theme="@style/AppTheme.SessionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/nextSession"
+            android:gravity="center"
+            android:textSize="55sp"
+            android:text="@string/session_date"/>
+    </RelativeLayout>
+
 
 </FrameLayout>

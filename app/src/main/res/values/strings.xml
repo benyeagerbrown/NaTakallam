@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">NaTakallam</string>
     <string name="add_credits">Add Credits</string>
+    <string name="example_profile">John Doe</string>
+    <string name="next_session">Next Session: </string>
+    <string name="session_date">Sep 8 15:00</string>
 </resources>

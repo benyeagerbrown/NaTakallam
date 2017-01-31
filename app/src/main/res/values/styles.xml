@@ -13,6 +13,12 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="AppTheme.SessionButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/homeColor</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="AppTheme.ButtonBorderless" parent="Widget.AppCompat.Button.Borderless">
         <item name="colorButtonNormal">@android:color/holo_blue_dark</item>
         <item name="android:textColor">@android:color/white</item>
