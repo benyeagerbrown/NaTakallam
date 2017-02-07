@@ -1,6 +1,7 @@
 package com.globalappinitiative.natakallam;
 
 
+
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,5 +26,6 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
 
 }

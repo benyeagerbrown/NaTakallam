@@ -4,4 +4,5 @@
     <string name="example_profile">John Doe</string>
     <string name="next_session">Next Session: </string>
     <string name="session_date">Sep 8 15:00</string>
+    <string name="add_session">Add Session WIP</string>
 </resources>

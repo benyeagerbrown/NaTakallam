@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".SignInActivity" />
         <activity android:name=".NewUserActivity" />
+        <activity android:name=".AddSessionActivity"></activity>
     </application>
 
 </manifest>

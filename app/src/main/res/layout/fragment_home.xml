@@ -60,7 +60,23 @@
             android:layout_below="@id/nextSession"
             android:gravity="center"
             android:textSize="55sp"
-            android:text="@string/session_date"/>
+            android:text="@string/session_date"
+            />
+
+        <Button
+            android:id="@+id/add_session"
+            android:theme="@style/AppTheme.SessionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_below="@id/session_date"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textSize="55sp"
+            android:text="@string/add_session"
+            android:onClick="addSession"
+            />
+
     </RelativeLayout>
 
 
