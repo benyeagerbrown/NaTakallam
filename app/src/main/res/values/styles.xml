@@ -12,6 +12,10 @@
         <item name="colorButtonNormal">@android:color/holo_blue_dark</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+    <style name="AppTheme.ButtonColoredSettings" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/settingsColor</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 
     <style name="AppTheme.SessionButton" parent="Widget.AppCompat.Button.Colored">
         <item name="colorButtonNormal">@color/homeColor</item>
