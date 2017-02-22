@@ -7,6 +7,8 @@
     <string name="add_session">Add Session WIP</string>
     <string name="about_us">We are graduates of Columbia’s School of International and Public Affairs with extensive experience in language learning and teaching. Our interests lie in economic and political development, human rights, humanitarian affairs and journalism. All core members of the team are originally from the Middle East. More details coming soon.</string>
     <string name="contact_us">For more information, please contact info@natakallam.com</string>
+    <string name="bretttest">bretttest</string>
+    <string name="bretttest2">bretttest2</string>
     <string-array name="month_array">
         <item>January</item>
         <item>February</item>
