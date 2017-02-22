@@ -9,10 +9,23 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.globalappinitiative.natakallam.AddSessionActivity">
+    
+    <Spinner
+        android:id="@+id/month_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </Spinner>
 
-    <TextView
+    <Spinner
+        android:id="@+id/day_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="testing this page!!"/>
+        android:layout_below="@id/month_spinner"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        >
+
+    </Spinner>
+
 
 </RelativeLayout>
