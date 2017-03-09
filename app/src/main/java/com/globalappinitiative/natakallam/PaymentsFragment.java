@@ -2,6 +2,7 @@ package com.globalappinitiative.natakallam;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,21 +12,25 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class PaymentsFragment extends Fragment {
+public class PaymentsFragment extends Fragment implements View.OnClickListener {
 
+    View PaymentsFragmentView;
+    View paymentsCircle;
+    TextView textViewCredits;
+    Button buttonAddCredits;
 
     public PaymentsFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View PaymentsFragmentView = inflater.inflate(R.layout.fragment_payments, container, false);         // Inflate the layout for this fragment
-        final TextView textViewCredits = (TextView) PaymentsFragmentView.findViewById(R.id.textViewCredits);
-        final Button buttonAddCredits = (Button) PaymentsFragmentView.findViewById(R.id.buttonAddCredits);
-        View paymentsCircle = PaymentsFragmentView.findViewById(R.id.paymentsCircle);
+        PaymentsFragmentView = inflater.inflate(R.layout.fragment_payments, container, false);         // Inflate the layout for this fragment
+        textViewCredits = (TextView) PaymentsFragmentView.findViewById(R.id.textViewCredits);
+        buttonAddCredits = (Button) PaymentsFragmentView.findViewById(R.id.buttonAddCredits);
+        buttonAddCredits.setOnClickListener(this);
+        paymentsCircle = PaymentsFragmentView.findViewById(R.id.paymentsCircle);
         Animation scale_up = AnimationUtils.loadAnimation(getContext(), R.anim.scale_up);
         scale_up.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -51,4 +56,26 @@ public class PaymentsFragment extends Fragment {
         return PaymentsFragmentView;
     }
 
+    @Override
+    public void onClick(View v) {
+        Animation scale_up_full_screen = AnimationUtils.loadAnimation(getContext(), R.anim.scale_up_full_screen);
+        scale_up_full_screen.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                textViewCredits.setVisibility(View.INVISIBLE);
+                buttonAddCredits.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                startActivity(new Intent(getContext(), AddCreditsActivity.class));
+                getActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+        paymentsCircle.startAnimation(scale_up_full_screen);
+    }
 }

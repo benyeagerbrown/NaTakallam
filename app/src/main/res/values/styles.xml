@@ -25,8 +25,12 @@
     </style>
 
     <style name="AppTheme.ButtonBorderless" parent="Widget.AppCompat.Button.Borderless">
-        <item name="colorButtonNormal">@android:color/holo_blue_dark</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:colorControlHighlight">@android:color/holo_blue_dark</item>
+        <item name="android:textColor">@color/paymentsColor</item>
+    </style>
+
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@android:color/holo_blue_dark</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
