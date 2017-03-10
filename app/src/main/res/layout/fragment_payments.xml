@@ -15,26 +15,26 @@
             android:layout_height="1dp"
             android:layout_centerInParent="true" />
 
-
         <View
             android:id="@+id/paymentsCircle"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_above="@id/blankSpace"
             android:layout_centerInParent="true"
-            android:background="@drawable/payments_circle" />
+            android:background="@drawable/payments_circle"
+            android:transitionName="paymentsCircle" />
 
         <TextView
             android:id="@+id/textViewCredits"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="Credits\n100"
             android:layout_above="@id/blankSpace"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:paddingBottom="50dp"
+            android:text="Credits\n100"
             android:textAppearance="@android:style/TextAppearance.Large"
-            android:textColor="@android:color/white"
-            android:paddingBottom="50dp"/>
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/buttonAddCredits"
@@ -43,7 +43,7 @@
             android:layout_below="@id/blankSpace"
             android:layout_centerHorizontal="true"
             android:text="@string/add_credits"
-            android:theme="@style/AppTheme.ButtonColored"/>
+            android:theme="@style/AppTheme.ButtonColored" />
 
     </RelativeLayout>
 </FrameLayout>

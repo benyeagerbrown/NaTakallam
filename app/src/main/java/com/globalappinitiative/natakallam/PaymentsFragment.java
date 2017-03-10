@@ -4,6 +4,7 @@ package com.globalappinitiative.natakallam;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,24 +59,7 @@ public class PaymentsFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Animation scale_up_full_screen = AnimationUtils.loadAnimation(getContext(), R.anim.scale_up_full_screen);
-        scale_up_full_screen.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-                textViewCredits.setVisibility(View.INVISIBLE);
-                buttonAddCredits.setVisibility(View.INVISIBLE);
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                startActivity(new Intent(getContext(), AddCreditsActivity.class));
-                getActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-            }
-        });
-        paymentsCircle.startAnimation(scale_up_full_screen);
+        startActivity(new Intent(getContext(), AddCreditsActivity.class));
+        getActivity().overridePendingTransition(0, 0);
     }
 }
