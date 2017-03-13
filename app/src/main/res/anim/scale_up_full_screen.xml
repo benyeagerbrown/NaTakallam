@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fillAfter="true"
-    android:fillEnabled="true">
+<set xmlns:android="http://schemas.android.com/apk/res/android">
     <scale
         android:duration="800"
         android:fromXScale="1"
@@ -9,6 +7,6 @@
         android:interpolator="@android:anim/accelerate_decelerate_interpolator"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:toXScale="10"
-        android:toYScale="10" />
+        android:toXScale="8"
+        android:toYScale="8" />
 </set>
