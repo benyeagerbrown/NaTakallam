@@ -7,8 +7,6 @@
     <string name="add_session">Add Session WIP</string>
     <string name="about_us">We are graduates of Columbia’s School of International and Public Affairs with extensive experience in language learning and teaching. Our interests lie in economic and political development, human rights, humanitarian affairs and journalism. All core members of the team are originally from the Middle East. More details coming soon.</string>
     <string name="contact_us">For more information, please contact info@natakallam.com</string>
-    <string name="ben_test2">testing again!!!</string>
-    <string name="please_be_final_test">testing</string>
     <string-array name="month_array">
         <item>January</item>
         <item>February</item>
@@ -56,5 +54,61 @@
         <item>30</item>
         <item>31</item>
     </string-array>
-    <string name="ben_test">ben test!!!</string>
+    <string-array name="twenty_four_time_array">
+        <item>Midnight</item>
+        <item>1:00</item>
+        <item>2:00</item>
+        <item>3:00</item>
+        <item>4:00</item>
+        <item>5:00</item>
+        <item>6:00</item>
+        <item>7:00</item>
+        <item>8:00</item>
+        <item>9:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>Noon</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+        <item>21:00</item>
+        <item>22:00</item>
+        <item>23:00</item>
+    </string-array>
+    <string-array name="twelve_time_array">
+        <item>Midnight</item>
+        <item>1:00AM</item>
+        <item>2:00AM</item>
+        <item>3:00AM</item>
+        <item>4:00AM</item>
+        <item>5:00AM</item>
+        <item>6:00AM</item>
+        <item>7:00AM</item>
+        <item>8:00AM</item>
+        <item>9:00AM</item>
+        <item>10:00AM</item>
+        <item>11:00AM</item>
+        <item>Noon</item>
+        <item>13:00PM</item>
+        <item>14:00PM</item>
+        <item>15:00PM</item>
+        <item>16:00PM</item>
+        <item>17:00PM</item>
+        <item>18:00PM</item>
+        <item>19:00PM</item>
+        <item>20:00PM</item>
+        <item>21:00PM</item>
+        <item>22:00PM</item>
+        <item>23:00PM</item>
+    </string-array>
+    <string name="date">date</string>
+    <string name="time">time</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
