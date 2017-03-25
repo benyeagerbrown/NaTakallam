@@ -15,13 +15,15 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Contact">
-        <Preference
+        <EditTextPreference
             android:icon="@drawable/ic_action_video"
+            android:inputType="number"
             android:key="skype_id"
             android:summary="@string/skype_id_message"
             android:title="@string/skype_id_title" />
-        <Preference
+        <EditTextPreference
             android:icon="@drawable/ic_action_phone"
+            android:inputType="number"
             android:key="phone_number"
             android:summary="@string/phone_number_message"
             android:title="@string/phone_number_title" />
@@ -35,7 +37,7 @@
             android:title="@string/taboo_topics_title" />
         <Preference
             android:icon="@drawable/ic_action_about"
-            android:key="about"
+            android:key="about_us"
             android:summary="@string/about_us_message"
             android:title="@string/about_us_title" />
 

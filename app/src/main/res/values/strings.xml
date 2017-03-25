@@ -69,4 +69,14 @@
     <string name="phone_number_message">Update your phone number.</string>
     <string name="taboo_topics_message">Update your list of taboo topics.</string>
     <string name="about_us_message">Learn more about NaTakallam.</string>
+
+    <string name="new_email">New email address</string>
+    <string name="confirm_new_email">Confirm new email address</string>
+    <string name="update_button">Update</string>
+    <string name="password">Password</string>
+
+    <string name="mismatched_emails">Your emails do not match.</string>
+    <string name="incorrect_password">Incorrect password.</string>
+    <string name="invalid_email">Please enter a valid email address.</string>
+    <string name="ok">ok</string>
 </resources>
