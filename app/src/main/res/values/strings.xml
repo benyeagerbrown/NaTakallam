@@ -78,5 +78,10 @@
     <string name="mismatched_emails">Your emails do not match.</string>
     <string name="incorrect_password">Incorrect password.</string>
     <string name="invalid_email">Please enter a valid email address.</string>
-    <string name="ok">ok</string>
+    <string name="ok">OK</string>
+
+    <string name="mismatched_passwords">Your new passwords do not match.</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_new_password">Confirm new password</string>
 </resources>

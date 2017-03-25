@@ -8,7 +8,6 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
-import android.util.Log;
 
 public class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -42,10 +41,10 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
         String key = preference.getKey();
         switch (key) {
             case PreferenceKeys.email:
-                Log.d("preference", "email");
                 startActivity(new Intent(getContext(), ChangeEmailActivity.class));
                 break;
             case PreferenceKeys.password:
+                startActivity(new Intent(getContext(), ChangePasswordActivity.class));
                 break;
             case PreferenceKeys.skype_id:
                 break;

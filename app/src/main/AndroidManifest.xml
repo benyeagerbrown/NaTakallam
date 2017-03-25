@@ -22,7 +22,8 @@
         <activity android:name=".SignInActivity" />
         <activity android:name=".NewUserActivity" />
         <activity android:name=".AddSessionActivity" />
-        <activity android:name=".ChangeEmailActivity"></activity>
+        <activity android:name=".ChangeEmailActivity" />
+        <activity android:name=".ChangePasswordActivity"></activity>
     </application>
 
 </manifest>
