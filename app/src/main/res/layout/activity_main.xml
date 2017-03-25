@@ -9,14 +9,15 @@
     <FrameLayout
         android:id="@+id/contentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp"/>
 
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
-        app:bb_tabXmlResource="@xml/bottombar_tabs"
-        app:bb_behavior="shy"/>
+        app:bb_behavior="shifting"
+        app:bb_tabXmlResource="@xml/bottombar_tabs" />
 
 </android.support.design.widget.CoordinatorLayout>
