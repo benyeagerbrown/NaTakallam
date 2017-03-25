@@ -66,4 +66,8 @@ public class MainActivity extends AppCompatActivity {
     public void addSession(View v) {
         startActivity(new Intent(MainActivity.this, AddSessionActivity.class));
     }
+
+    public void openProfile(View v) {
+        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+    }
 }
