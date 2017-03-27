@@ -10,6 +10,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.support.customtabs.CustomTabsIntent;
 
@@ -78,6 +79,10 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
 
     private void logOut() {
         showDialog(getString(R.string.log_out_title), getString(R.string.log_out_confirm));
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
     }
 
     private void showDialog(String title, String message) {
