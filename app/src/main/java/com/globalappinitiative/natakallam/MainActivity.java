@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openProfile(View v) {
         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+    }
 
     private void changeFragment(int currentFragmentIndex) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
