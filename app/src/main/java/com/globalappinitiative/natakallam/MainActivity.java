@@ -18,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
     static final int CALENDAR_ID = 2;
     static final int SETTINGS_ID = 3;
 
+
     static final String instanceKey = "currentFragmentIndex";
+
     int currentFragmentIndex = 0;
 
     @Override
@@ -69,10 +71,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, AddSessionActivity.class));
     }
 
+
     public void openProfile(View v) {
         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
     }
-
+  
     private void changeFragment(int currentFragmentIndex) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -98,4 +101,5 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
 
     }
+
 }
