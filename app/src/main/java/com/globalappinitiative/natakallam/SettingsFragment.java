@@ -2,14 +2,19 @@ package com.globalappinitiative.natakallam;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.support.customtabs.CustomTabsIntent;
 
 public class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+    private static final String aboutUrl = "https://natakallam.com/about/";
+
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -54,11 +59,18 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
                 startActivity(new Intent(getContext(), TabooTopicsActivity.class));
                 break;
             case PreferenceKeys.about_us:
+                launchChromeTab();
                 break;
             case PreferenceKeys.log_out:
                 break;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    private void launchChromeTab() {
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(getActivity(), Uri.parse(aboutUrl));
     }
 
     @Override
