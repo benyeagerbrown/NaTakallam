@@ -98,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loggedOut() {
-        startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
-
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 }
