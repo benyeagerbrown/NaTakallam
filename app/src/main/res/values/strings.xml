@@ -7,53 +7,6 @@
     <string name="add_session">Add Session WIP</string>
     <string name="about_us">We are graduates of Columbia’s School of International and Public Affairs with extensive experience in language learning and teaching. Our interests lie in economic and political development, human rights, humanitarian affairs and journalism. All core members of the team are originally from the Middle East. More details coming soon.</string>
     <string name="contact_us">For more information, please contact info@natakallam.com</string>
-    <string-array name="month_array">
-        <item>January</item>
-        <item>February</item>
-        <item>March</item>
-        <item>April</item>
-        <item>May</item>
-        <item>June</item>
-        <item>July</item>
-        <item>August</item>
-        <item>September</item>
-        <item>October</item>
-        <item>November</item>
-        <item>December</item>
-    </string-array>
-    <string-array name="day_array">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
-        <item>22</item>
-        <item>23</item>
-        <item>24</item>
-        <item>25</item>
-        <item>26</item>
-        <item>27</item>
-        <item>28</item>
-        <item>29</item>
-        <item>30</item>
-        <item>31</item>
-    </string-array>
 
     <string name="email_title">Email</string>
     <string name="password_title">Password</string>
