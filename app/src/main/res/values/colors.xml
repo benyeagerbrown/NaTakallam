@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#FF5722</color>
+    <color name="addSessionColor">#448AFF</color>
     <color name="homeColor">#3F51B5</color>
     <color name="paymentsColor">#009688</color>
     <color name="calendarColor">#F44336</color>
