@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
-        app:bb_behavior="shifting"
-        app:bb_tabXmlResource="@xml/bottombar_tabs" />
+        app:bb_tabXmlResource="@xml/bottombar_tabs"
+        app:bb_behavior="shifting"/>
 
 </android.support.design.widget.CoordinatorLayout>

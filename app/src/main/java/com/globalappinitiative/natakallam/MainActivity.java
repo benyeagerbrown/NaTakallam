@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, AddSessionActivity.class));
     }
 
+    public void openProfile(View v) {
+        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
     private void changeFragment(int currentFragmentIndex) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -92,5 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void loggedOut() {
         startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
+
     }
 }
