@@ -71,6 +71,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void openProfile(View v) {
         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
+    private void changeFragment(int currentFragmentIndex) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        switch (currentFragmentIndex) {
+            case HOME_ID:
+                ft.replace(R.id.contentContainer, new HomeFragment());
+                break;
+            case PAYMENTS_ID:
+                ft.replace(R.id.contentContainer, new PaymentsFragment());
+                break;
+            case CALENDAR_ID:
+                ft.replace(R.id.contentContainer, new CalendarFragment());
+                break;
+            default:
+                ft.replace(R.id.contentContainer, new SettingsFragment());
+                break;
+        }
+        ft.commit();
+        this.currentFragmentIndex = currentFragmentIndex;
+    }
+
+    public void loggedOut() {
+        startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
+
     }
 
     private void changeFragment(int currentFragmentIndex) {

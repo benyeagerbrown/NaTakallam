@@ -7,18 +7,66 @@
     <string name="add_session">Add Session</string>
     <string name="about_us">We are graduates of Columbia’s School of International and Public Affairs with extensive experience in language learning and teaching. Our interests lie in economic and political development, human rights, humanitarian affairs and journalism. All core members of the team are originally from the Middle East. More details coming soon.</string>
     <string name="contact_us">For more information, please contact info@natakallam.com</string>
+  
     <string name="date">date</string>
     <string name="time">time</string>
     <string name="set_date">Set date:</string>
     <string name="set_time">Set time:</string>
     <string name="confirm">confirm</string>
-    <string name="cancel">cancel</string>
-    <string name="ok">ok</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="lorem">I like dog, cats, and Arabic. Cannot wait to learn a lot about stuff.</string>
-    <string name="action_settings">Settings</string>
     <string name="hobbies">hobbies:</string>
     <string name="example_hobbies">Skiing, reading, drawing, learning languages, programming</string>
     <string name="cp">conversation partners:</string>
     <string name="example_email">jdoe@gmail.com</string>
+
+
+    <string name="email_title">Email</string>
+    <string name="password_title">Password</string>
+    <string name="skype_id_title">Skype ID</string>
+    <string name="phone_number_title">Phone number</string>
+    <string name="taboo_topics_title">Taboo topics</string>
+    <string name="about_us_title">About us</string>
+    <string name="log_out_title">Log out</string>
+
+    <string name="email_message">Update your email address</string>
+    <string name="password_message">Change your password</string>
+    <string name="skype_id_message">Update your Skype ID</string>
+    <string name="phone_number_message">Update your phone number</string>
+    <string name="taboo_topics_message">Update your list of taboo topics</string>
+    <string name="about_us_message">Learn more about NaTakallam</string>
+
+    <string name="new_email">New email address</string>
+    <string name="confirm_new_email">Confirm new email address</string>
+    <string name="update_button">Update</string>
+    <string name="password">Password</string>
+
+    <string name="mismatched_emails">Your emails do not match.</string>
+    <string name="incorrect_password">Incorrect password.</string>
+    <string name="invalid_email">Please enter a valid email address.</string>
+    <string name="ok">OK</string>
+
+    <string name="mismatched_passwords">Your new passwords do not match.</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_new_password">Confirm new password</string>
+
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+
+    <string name="topic">Topic</string>
+    <string name="description">Description</string>
+
+    <string name="edit_topic">Edit topic</string>
+    <string name="add_topic">Add topic</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="taboo_topic_remove_confirmation">Are you sure you would like to remove this topic?</string>
+    <string name="remove">Remove</string>
+
+    <string name="yes">Yes</string>
+    <string name="log_out_confirm">Are you sure you would like to log out?</string>
+
+    <string name="empty_topic">Empty topic</string>
+    <string name="empty_topic_message">Please add a non-empty topic.</string>
 </resources>
