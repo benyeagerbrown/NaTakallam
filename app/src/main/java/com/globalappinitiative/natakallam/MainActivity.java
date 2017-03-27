@@ -1,8 +1,5 @@
 package com.globalappinitiative.natakallam;
 
-//import com.mikhaellopez.circularimageview.CircularImageView;
-
-
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,39 +13,38 @@ import com.roughike.bottombar.OnTabSelectListener;
 public class MainActivity extends AppCompatActivity {
 
     static final int SIGN_IN = 0;
+    static final int HOME_ID = 0;
+    static final int PAYMENTS_ID = 1;
+    static final int CALENDAR_ID = 2;
+    static final int SETTINGS_ID = 3;
+
+    static final String instanceKey = "currentFragmentIndex";
+    int currentFragmentIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            currentFragmentIndex = savedInstanceState.getInt(instanceKey);
+        } else {
+            currentFragmentIndex = HOME_ID;
+            startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
+        }
+        changeFragment(currentFragmentIndex);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
-
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
-
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
                 if (tabId == R.id.tab_home) {
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.contentContainer, new HomeFragment());
-                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                    ft.commit();
+                    changeFragment(HOME_ID);
                 } else if (tabId == R.id.tab_payments) {
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.contentContainer, new PaymentsFragment());
-                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                    ft.commit();
+                    changeFragment(PAYMENTS_ID);
                 } else if (tabId == R.id.tab_calendar) {
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.contentContainer, new CalendarFragment());
-                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                    ft.commit();
+                    changeFragment(CALENDAR_ID);
                 } else if (tabId == R.id.tab_settings) {
-                    android.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.contentContainer, new SettingsFragment());
-                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                    ft.commit();
+                    changeFragment(SETTINGS_ID);
                 }
             }
         });
@@ -57,10 +53,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == SIGN_IN) {
             if (resultCode == RESULT_OK) {
+                changeFragment(currentFragmentIndex);
             } else if (resultCode == RESULT_CANCELED) {
                 finish();
             }
         }
+    }
+
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt(instanceKey, currentFragmentIndex);
     }
 
     public void addSession(View v) {
@@ -69,5 +71,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void openProfile(View v) {
         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
+    private void changeFragment(int currentFragmentIndex) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        switch (currentFragmentIndex) {
+            case HOME_ID:
+                ft.replace(R.id.contentContainer, new HomeFragment());
+                break;
+            case PAYMENTS_ID:
+                ft.replace(R.id.contentContainer, new PaymentsFragment());
+                break;
+            case CALENDAR_ID:
+                ft.replace(R.id.contentContainer, new CalendarFragment());
+                break;
+            default:
+                ft.replace(R.id.contentContainer, new SettingsFragment());
+                break;
+        }
+        ft.commit();
+        this.currentFragmentIndex = currentFragmentIndex;
+    }
+
+    public void loggedOut() {
+        startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
+
     }
 }
