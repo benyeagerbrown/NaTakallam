@@ -97,4 +97,7 @@
     <string name="cancel">Cancel</string>
     <string name="taboo_topic_remove_confirmation">Are you sure you would like to remove this topic?</string>
     <string name="remove">Remove</string>
+
+    <string name="yes">Yes</string>
+    <string name="log_out_confirm">Are you sure you would like to log out?</string>
 </resources>

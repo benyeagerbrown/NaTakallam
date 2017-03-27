@@ -1,5 +1,7 @@
 package com.globalappinitiative.natakallam;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -62,6 +64,7 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
                 launchChromeTab();
                 break;
             case PreferenceKeys.log_out:
+                logOut();
                 break;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -71,6 +74,24 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(getActivity(), Uri.parse(aboutUrl));
+    }
+
+    private void logOut() {
+        showDialog(getString(R.string.log_out_title), getString(R.string.log_out_confirm));
+    }
+
+    private void showDialog(String title, String message) {
+        new AlertDialog.Builder(getContext())
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ((MainActivity) getActivity()).loggedOut();
+                    }
+                })
+                .setNegativeButton(getString(R.string.cancel), null)
+                .show();
     }
 
     @Override
