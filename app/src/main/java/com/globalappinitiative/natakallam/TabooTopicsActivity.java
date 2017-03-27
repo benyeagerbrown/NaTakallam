@@ -63,19 +63,35 @@ public class TabooTopicsActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void addTopic(String title, String description) {
-        tabooTopicsList.add(new TabooTopic(title, description));
-        recyclerAdapterTaboo.notifyItemInserted(tabooTopicsList.size() - 1);
+        if (title.isEmpty()) {
+            showErrorDialog();
+        } else {
+            tabooTopicsList.add(new TabooTopic(title, description));
+            recyclerAdapterTaboo.notifyItemInserted(tabooTopicsList.size() - 1);
+        }
     }
 
     private void editTopic(String title, String description, int position) {
-        tabooTopicsList.get(position).setTopic(title);
-        tabooTopicsList.get(position).setDescription(description);
-        recyclerAdapterTaboo.notifyItemChanged(position);
+        if (title.isEmpty()) {
+            showErrorDialog();
+        } else {
+            tabooTopicsList.get(position).setTopic(title);
+            tabooTopicsList.get(position).setDescription(description);
+            recyclerAdapterTaboo.notifyItemChanged(position);
+        }
     }
 
     private void deleteTopic(int position) {
         tabooTopicsList.remove(position);
         recyclerAdapterTaboo.notifyItemRemoved(position);
+    }
+
+    private void showErrorDialog() {
+        new android.app.AlertDialog.Builder(this)
+                .setTitle(getString(R.string.empty_topic))
+                .setMessage(getString(R.string.empty_topic_message))
+                .setPositiveButton(getString(R.string.ok), null)
+                .show();
     }
 
     private void showTopicDialog(final String dialogType, final int position) {

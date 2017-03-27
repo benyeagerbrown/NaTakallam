@@ -100,4 +100,7 @@
 
     <string name="yes">Yes</string>
     <string name="log_out_confirm">Are you sure you would like to log out?</string>
+
+    <string name="empty_topic">Empty topic</string>
+    <string name="empty_topic_message">Please add a non-empty topic.</string>
 </resources>
