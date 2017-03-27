@@ -63,12 +63,12 @@
     <string name="about_us_title">About us</string>
     <string name="log_out_title">Log out</string>
 
-    <string name="email_message">Update your email address.</string>
-    <string name="password_message">Change your password.</string>
-    <string name="skype_id_message">Update your Skype ID.</string>
-    <string name="phone_number_message">Update your phone number.</string>
-    <string name="taboo_topics_message">Update your list of taboo topics.</string>
-    <string name="about_us_message">Learn more about NaTakallam.</string>
+    <string name="email_message">Update your email address</string>
+    <string name="password_message">Change your password</string>
+    <string name="skype_id_message">Update your Skype ID</string>
+    <string name="phone_number_message">Update your phone number</string>
+    <string name="taboo_topics_message">Update your list of taboo topics</string>
+    <string name="about_us_message">Learn more about NaTakallam</string>
 
     <string name="new_email">New email address</string>
     <string name="confirm_new_email">Confirm new email address</string>

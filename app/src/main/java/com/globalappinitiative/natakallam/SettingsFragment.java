@@ -113,7 +113,9 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
             listPreference.setSummary(listPreference.getEntry());
             return;
         }
+        /*
         SharedPreferences sharedPreferences = getPreferenceManager().getSharedPreferences();
         preference.setSummary(sharedPreferences.getString(key, ""));
+        */
     }
 }

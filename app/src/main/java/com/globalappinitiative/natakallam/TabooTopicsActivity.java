@@ -37,9 +37,6 @@ public class TabooTopicsActivity extends AppCompatActivity implements View.OnCli
         recyclerView.setHasFixedSize(true);
 
         tabooTopicsList = new ArrayList<>();
-        for (int i = 0; i < 2; i++) {
-            tabooTopicsList.add(new TabooTopic("Topic " + Integer.toString(i), "Description"));
-        }
 
         recyclerAdapterTaboo = new RecyclerAdapterTaboo(tabooTopicsList);
         recyclerView.setAdapter(recyclerAdapterTaboo);
