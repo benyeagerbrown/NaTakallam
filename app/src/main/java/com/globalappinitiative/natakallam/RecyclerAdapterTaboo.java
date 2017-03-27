@@ -5,7 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -34,25 +35,20 @@ class RecyclerAdapterTaboo extends RecyclerView.Adapter<RecyclerAdapterTaboo.Tab
         return tabooTopicsList.size();
     }
 
-    static class TabooTopicsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    static class TabooTopicsHolder extends RecyclerView.ViewHolder {
 
-        private EditText editTextTabooTopicTitle;
-        private EditText editTextTabooTopicDescription;
+        private TextView textViewTabooTopicTitle;
+        private TextView textViewTabooTopicDescription;
 
         TabooTopicsHolder(View v) {
             super(v);
-            editTextTabooTopicTitle = (EditText) v.findViewById(R.id.editTextTabooTopicTitle);
-            editTextTabooTopicDescription = (EditText) v.findViewById(R.id.editTextTabooTopicDescription);
+            textViewTabooTopicTitle = (TextView) v.findViewById(R.id.textViewTabooTopicTitle);
+            textViewTabooTopicDescription = (TextView) v.findViewById(R.id.textViewTabooTopicDescription);
         }
 
         void bindTabooTopic(TabooTopic tabooTopic) {
-            editTextTabooTopicTitle.setText(tabooTopic.getTopic());
-            editTextTabooTopicDescription.setText(tabooTopic.getDescription());
-        }
-
-        @Override
-        public void onClick(View v) {
-
+            textViewTabooTopicTitle.setText(tabooTopic.getTopic());
+            textViewTabooTopicDescription.setText(tabooTopic.getDescription());
         }
     }
 }

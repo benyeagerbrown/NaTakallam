@@ -84,4 +84,17 @@
     <string name="current_password">Current password</string>
     <string name="new_password">New password</string>
     <string name="confirm_new_password">Confirm new password</string>
+
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+
+    <string name="topic">Topic</string>
+    <string name="description">Description</string>
+
+    <string name="edit_topic">Edit topic</string>
+    <string name="add_topic">Add topic</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="taboo_topic_remove_confirmation">Are you sure you would like to remove this topic?</string>
+    <string name="remove">Remove</string>
 </resources>

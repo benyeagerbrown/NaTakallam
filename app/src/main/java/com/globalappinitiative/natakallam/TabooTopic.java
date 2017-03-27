@@ -5,16 +5,24 @@ class TabooTopic {
     private String topic;
     private String description;
 
-    public TabooTopic(String topic, String description) {
+    TabooTopic(String topic, String description) {
         this.topic = topic;
         this.description = description;
     }
 
-    public String getTopic() {
+    String getTopic() {
         return this.topic;
     }
 
-    public String getDescription() {
+    String getDescription() {
         return this.description;
+    }
+
+    void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    void setDescription(String description) {
+        this.description = description;
     }
 }
