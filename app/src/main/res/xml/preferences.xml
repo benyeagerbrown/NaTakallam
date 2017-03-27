@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Profile">
+        <Preference
+            android:icon="@drawable/ic_action_email"
+            android:key="email"
+            android:summary="@string/email_message"
+            android:title="@string/email_title" />
+        <Preference
+            android:icon="@drawable/ic_action_password"
+            android:key="password"
+            android:summary="@string/password_message"
+            android:title="@string/password_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Contact">
+        <EditTextPreference
+            android:icon="@drawable/ic_action_video"
+            android:inputType="number"
+            android:key="skype_id"
+            android:summary="@string/skype_id_message"
+            android:title="@string/skype_id_title" />
+        <EditTextPreference
+            android:icon="@drawable/ic_action_phone"
+            android:inputType="number"
+            android:key="phone_number"
+            android:summary="@string/phone_number_message"
+            android:title="@string/phone_number_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Other">
+        <Preference
+            android:icon="@drawable/ic_action_taboo"
+            android:key="taboo_topics"
+            android:summary="@string/taboo_topics_message"
+            android:title="@string/taboo_topics_title" />
+        <Preference
+            android:icon="@drawable/ic_action_about"
+            android:key="about_us"
+            android:summary="@string/about_us_message"
+            android:title="@string/about_us_title" />
+
+        <Preference
+            android:icon="@drawable/ic_action_log_out"
+            android:key="log_out"
+            android:title="@string/log_out_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

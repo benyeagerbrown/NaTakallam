@@ -1,8 +1,5 @@
 package com.globalappinitiative.natakallam;
 
-//import com.mikhaellopez.circularimageview.CircularImageView;
-
-
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,14 +18,17 @@ public class MainActivity extends AppCompatActivity {
     static final int CALENDAR_ID = 2;
     static final int SETTINGS_ID = 3;
 
+
+    static final String instanceKey = "currentFragmentIndex";
+
     int currentFragmentIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
-            currentFragmentIndex = savedInstanceState.getInt("currentFragmentIndex");
+            currentFragmentIndex = savedInstanceState.getInt(instanceKey);
         } else {
-            currentFragmentIndex = 0;
+            currentFragmentIndex = HOME_ID;
             startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
         }
         changeFragment(currentFragmentIndex);
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
-
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
@@ -56,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == SIGN_IN) {
             if (resultCode == RESULT_OK) {
+                changeFragment(currentFragmentIndex);
             } else if (resultCode == RESULT_CANCELED) {
                 finish();
             }
@@ -64,13 +64,18 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putInt("currentFragmentIndex", currentFragmentIndex);
+        savedInstanceState.putInt(instanceKey, currentFragmentIndex);
     }
 
     public void addSession(View v) {
         startActivity(new Intent(MainActivity.this, AddSessionActivity.class));
     }
 
+
+    public void openProfile(View v) {
+        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+    }
+  
     private void changeFragment(int currentFragmentIndex) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -91,4 +96,10 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
         this.currentFragmentIndex = currentFragmentIndex;
     }
+
+    public void loggedOut() {
+        startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
+
+    }
+
 }
