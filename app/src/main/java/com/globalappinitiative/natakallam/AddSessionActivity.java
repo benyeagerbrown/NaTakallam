@@ -1,55 +1,131 @@
 package com.globalappinitiative.natakallam;
-
-
-import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.util.Log;
 import android.view.View;
+import android.app.DialogFragment;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
-public class AddSessionActivity extends AppCompatActivity {
+public class AddSessionActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_session);
 
-        Spinner month_spinner = (Spinner) findViewById(R.id.month_spinner);
+        final java.util.Calendar c = java.util.Calendar.getInstance();
 
-        ArrayAdapter<CharSequence> month_adapter = ArrayAdapter.createFromResource(this,
-                R.array.month_array, android.R.layout.simple_spinner_item);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, MMM d", Locale.ENGLISH);
+        String formattedDate = dateFormat.format(c.getTime());
 
-        month_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a", Locale.ENGLISH);
 
-        month_spinner.setAdapter(month_adapter);
+        if(android.text.format.DateFormat.is24HourFormat(this)) {
+            timeFormat.applyPattern("k:mm");
+        }
 
 
-        Spinner day_spinner = (Spinner) findViewById(R.id.day_spinner);
+        String formattedTime = timeFormat.format(c.getTime());
 
-        ArrayAdapter<CharSequence> day_adapter = ArrayAdapter.createFromResource(this,
-                R.array.day_array, android.R.layout.simple_spinner_item);
+        Button time_button = (Button)findViewById(R.id.time_button);
+        time_button.setText(formattedTime);
 
-        day_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Button date_button = (Button)findViewById(R.id.date_button);
+        date_button.setText(formattedDate);
 
-        day_spinner.setAdapter(day_adapter);
 
     }
 
-    public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener{
+    public void showDatePickerDialog(View v) {
 
-        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+        final java.util.Calendar c = java.util.Calendar.getInstance();
 
-        }
+        int year = c.get(java.util.Calendar.YEAR);
+        int month = c.get(java.util.Calendar.MONTH);
+        int day = c.get(java.util.Calendar.DAY_OF_MONTH);
 
-        public void onNothingSelected(AdapterView<?> parent) {
+        DatePickerDialog datePicker = new DatePickerDialog(AddSessionActivity.this, this, year, month, day);
+        datePicker.show();
+    }
 
-        }
+    public void showTimePickerDialog(View v) {
+        final java.util.Calendar c = java.util.Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        TimePickerDialog timePicker = new TimePickerDialog(AddSessionActivity.this, this, hour, minute, false);
+        timePicker.show();
 
     }
 
+    @Override
+    public void onTimeSet(TimePicker timePicker, int hour, int minute) {
+        Button time_button = (Button)findViewById(R.id.time_button);
+
+        final java.util.Calendar now = java.util.Calendar.getInstance();
+
+        java.util.Calendar c = java.util.Calendar.getInstance();
+        c.set(now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH), hour, minute);
+
+        if(c.before(now)) {
+            showDialog("Must schedule sessions in the future");
+            return;
+        }
+
+        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a", Locale.ENGLISH);
+
+        if(android.text.format.DateFormat.is24HourFormat(this)) {
+            timeFormat.applyPattern("k:mm");
+        }
+
+        String formattedTime = timeFormat.format(c.getTime());
+
+        time_button.setText(formattedTime);
+
+    }
+
+    @Override
+    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+        Button date_button = (Button)findViewById(R.id.date_button);
+
+        final java.util.Calendar now = java.util.Calendar.getInstance();
+
+        java.util.Calendar c = java.util.Calendar.getInstance();
+        c.set(year, month, day);
+
+        if(c.before(now)) {
+            showDialog("Must schedule sessions in the future");
+            return;
+        }
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, MMM d", Locale.ENGLISH);
+        String formattedDate = dateFormat.format(c.getTime());
+
+        date_button.setText(formattedDate);
 
 
 
+    }
+
+    public void showDialog(String message) {
+        new AlertDialog.Builder(this)
+                .setMessage(message)
+                .setPositiveButton(getString(R.string.ok), null)
+                .show();
+    }
+    public void returnHome(View v) {
+        finish();
+    }
 }
+
+
+
