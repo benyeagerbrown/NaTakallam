@@ -18,8 +18,10 @@ public class MainActivity extends AppCompatActivity {
     static final int CALENDAR_ID = 2;
     static final int SETTINGS_ID = 3;
 
+
     static final String instanceKey = "currentFragmentIndex";
-    int currentFragmentIndex = 0;
+
+    int currentFragmentIndex = HOME_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, AddSessionActivity.class));
     }
 
+
     public void openProfile(View v) {
         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
     }
@@ -95,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loggedOut() {
-        startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
-
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
     }
+
 }
