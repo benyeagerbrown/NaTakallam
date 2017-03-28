@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     static final String instanceKey = "currentFragmentIndex";
 
-    int currentFragmentIndex = 0;
+    int currentFragmentIndex = HOME_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public void openProfile(View v) {
         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
     }
-  
+
     private void changeFragment(int currentFragmentIndex) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -98,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loggedOut() {
-        startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
-
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 }
