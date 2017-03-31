@@ -9,23 +9,83 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.globalappinitiative.natakallam.AddSessionActivity">
-    
-    <Spinner
-        android:id="@+id/month_spinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-    </Spinner>
 
-    <Spinner
-        android:id="@+id/day_spinner"
+    <TextView
+        android:id="@+id/set_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/month_spinner"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        >
+        android:text="@string/set_date"
+        android:layout_marginTop="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        android:textSize="25sp"
+        android:layout_marginBottom="10dp"/>
 
-    </Spinner>
+    <Button
+        android:id="@+id/date_button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:theme="@style/AppTheme.ButtonColoredAddSession"
+        android:textColor="@android:color/white"
+        android:onClick="showDatePickerDialog"
+        android:textSize="44sp"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:layout_below="@id/set_date"
+        android:bottomRightRadius="@dimen/corner_radius"
+        android:bottomLeftRadius="@dimen/corner_radius"
+        android:topLeftRadius="@dimen/corner_radius"
+        android:topRightRadius="@dimen/corner_radius"/>
+
+    <TextView
+        android:id="@+id/set_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_time"
+        android:layout_below="@id/date_button"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/time_button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:theme="@style/AppTheme.ButtonColoredAddSession"
+        android:textColor="@android:color/white"
+        android:onClick="showTimePickerDialog"
+        android:textSize="44sp"
+        android:layout_below="@id/set_time"
+        android:layout_centerHorizontal="true"
+        android:bottomRightRadius="@dimen/corner_radius"
+        android:bottomLeftRadius="@dimen/corner_radius"
+        android:topLeftRadius="@dimen/corner_radius"
+        android:topRightRadius="@dimen/corner_radius"/>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/AppTheme.ButtonColored"
+        android:onClick="returnHome"/>
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/confirm"
+        android:text="@string/cancel"
+        android:theme="@style/AppTheme.ButtonColored"
+        android:onClick="returnHome"/>
 
 
 </RelativeLayout>
