@@ -31,8 +31,8 @@ public class AddCreditsActivity extends AppCompatActivity {
             bundleList.add(new Bundles("Bundle " + Integer.toString(i), "Description"));
         }
 
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(bundleList);
-        recyclerView.setAdapter(recyclerAdapter);
+        RecyclerAdapterBundles recyclerAdapterBundles = new RecyclerAdapterBundles(bundleList);
+        recyclerView.setAdapter(recyclerAdapterBundles);
 
         Animation scale_up_full_screen = AnimationUtils.loadAnimation(this, R.anim.scale_up_full_screen);
         scale_up_full_screen.setAnimationListener(new Animation.AnimationListener() {

@@ -10,22 +10,22 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BundlesHolder> {
+class RecyclerAdapterBundles extends RecyclerView.Adapter<RecyclerAdapterBundles.BundlesHolder> {
 
     private ArrayList<Bundles> bundleList;
 
-    public RecyclerAdapter(ArrayList<Bundles> bundles) {
+    RecyclerAdapterBundles(ArrayList<Bundles> bundles) {
         this.bundleList = bundles;
     }
 
     @Override
-    public RecyclerAdapter.BundlesHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerAdapterBundles.BundlesHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflatedView = LayoutInflater.from(parent.getContext()).inflate(R.layout.bundles, parent, false);
         return new BundlesHolder(inflatedView);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerAdapter.BundlesHolder holder, int position) {
+    public void onBindViewHolder(RecyclerAdapterBundles.BundlesHolder holder, int position) {
         Bundles bundle = bundleList.get(position);
         holder.bindBundle(bundle);
     }
@@ -35,13 +35,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Bundle
         return bundleList.size();
     }
 
-    public static class BundlesHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    static class BundlesHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView bundleTitle;
         private TextView bundleDescription;
         private Button bundlePurchase;
 
-        public BundlesHolder(View v) {
+        BundlesHolder(View v) {
             super(v);
             bundleTitle = (TextView) v.findViewById(R.id.textViewBundleTitle);
             bundleDescription = (TextView) v.findViewById(R.id.textViewBundleDescription);
@@ -49,7 +49,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Bundle
             bundlePurchase.setOnClickListener(this);
         }
 
-        public void bindBundle(Bundles bundle) {
+        void bindBundle(Bundles bundle) {
             bundleTitle.setText(bundle.getTitle());
             bundleDescription.setText(bundle.getDescription());
         }
