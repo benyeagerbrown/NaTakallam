@@ -13,16 +13,9 @@
         android:scrollbars="vertical"/>
 
     <View
-        android:id="@+id/blankSpace"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_centerInParent="true" />
-
-    <View
         android:id="@+id/paymentsCircle"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_above="@id/blankSpace"
+        android:layout_width="@dimen/payments_circle_size"
+        android:layout_height="@dimen/payments_circle_size"
         android:layout_centerInParent="true"
         android:background="@drawable/payments_circle"
         android:transitionName="paymentsCircle" />
