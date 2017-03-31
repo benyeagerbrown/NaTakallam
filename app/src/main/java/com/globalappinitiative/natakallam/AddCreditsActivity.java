@@ -58,11 +58,11 @@ public class AddCreditsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Animation fade_in_quick = AnimationUtils.loadAnimation(this, R.anim.fade_in_quick);
-        fade_in_quick.setAnimationListener(new Animation.AnimationListener() {
+        Animation fade_in = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        fade_in.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                recyclerView.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out_quick));
+                recyclerView.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out));
             }
 
             @Override
@@ -93,6 +93,6 @@ public class AddCreditsActivity extends AppCompatActivity {
 
             }
         });
-        paymentsCircle.startAnimation(fade_in_quick);
+        paymentsCircle.startAnimation(fade_in);
     }
 }
