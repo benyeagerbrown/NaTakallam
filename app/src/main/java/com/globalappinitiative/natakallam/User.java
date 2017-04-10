@@ -15,9 +15,9 @@ class User {
         sharedPreferencesEditor.apply();
     }
 
-    static void getValue(String key, String value, Context context) {
+    static String getValue(String key, Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        sharedPreferences.getString(key, value);
+        return sharedPreferences.getString(key, key);
     }
 
     class Keys {

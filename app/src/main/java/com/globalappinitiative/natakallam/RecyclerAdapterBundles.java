@@ -50,7 +50,7 @@ class RecyclerAdapterBundles extends RecyclerView.Adapter<RecyclerAdapterBundles
         }
 
         void bindBundle(Bundles bundle) {
-            bundleTitle.setText(bundle.getTitle());
+            bundleTitle.setText(bundle.getName());
             bundleDescription.setText(bundle.getDescription());
         }
 
