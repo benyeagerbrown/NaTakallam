@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -71,7 +71,6 @@ public class AddCreditsActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, bundles_url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                Log.d("BundlesRequest", response.toString());
                 try {
                     boolean isError = response.getBoolean("errors");
                     if (isError) {
@@ -90,7 +89,6 @@ public class AddCreditsActivity extends AppCompatActivity {
                             allBundles.add(newBundle);
                             recyclerAdapterBundles.notifyItemInserted(i);
                         }
-                        setRecyclerView();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -100,7 +98,6 @@ public class AddCreditsActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("BundlesRequest", error.toString());
                 error.printStackTrace();
                 getBundlesError();
             }
@@ -117,11 +114,7 @@ public class AddCreditsActivity extends AppCompatActivity {
     }
 
     private void getBundlesError() {
-
-    }
-
-    private void setRecyclerView() {
-
+        Toast.makeText(getApplicationContext(), getString(R.string.bundles_error), Toast.LENGTH_SHORT).show();
     }
 
     @Override
