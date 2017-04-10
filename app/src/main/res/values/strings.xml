@@ -78,4 +78,5 @@
     <string name="sign_up_prompt">Don\'t have an account? Sign up</string>
 
     <string name="bundles_error">Could not load bundles, please try again later.</string>
+    <string name="taboo_topics_error">Could not load taboo topics, please try again later.</string>
 </resources>

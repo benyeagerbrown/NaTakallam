@@ -11,32 +11,51 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TabooTopicsActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FloatingActionButton buttonAddTabooTopic;
     private RecyclerAdapterTaboo recyclerAdapterTaboo;
-    private ArrayList<TabooTopic> tabooTopicsList;
+    private ArrayList<TabooTopic> tabooTopicsList = new ArrayList<>();
     private static final String EDIT = "EDIT";
     private static final String ADD = "ADD";
     private static final String DELETE = "DELETE";
+    private static final String taboo_topics_url = "http://natakallam.eastus.cloudapp.azure.com/api/taboo-topics";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taboo_topics);
 
+        setUpFab();
+        setUpRecyclerView();
+        getTopics();
+    }
+
+    private void setUpFab() {
         buttonAddTabooTopic = (FloatingActionButton) findViewById(R.id.buttonAddTabooTopic);
         buttonAddTabooTopic.setOnClickListener(this);
+    }
 
+    private void setUpRecyclerView() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
-
-        tabooTopicsList = new ArrayList<>();
 
         recyclerAdapterTaboo = new RecyclerAdapterTaboo(tabooTopicsList);
         recyclerView.setAdapter(recyclerAdapterTaboo);
@@ -60,6 +79,47 @@ public class TabooTopicsActivity extends AppCompatActivity implements View.OnCli
         if (v.getId() == buttonAddTabooTopic.getId()) {
             showTopicDialog(ADD, tabooTopicsList.size() - 1);
         }
+    }
+
+    private void getTopics() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, taboo_topics_url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray allTabooTopics = response.getJSONArray("taboo_topics");
+                    for (int i = 0; i < allTabooTopics.length(); i++) {
+                        JSONObject tabooTopic = allTabooTopics.getJSONObject(i);
+                        String topic = tabooTopic.getString("topic");
+                        String description = tabooTopic.getString("description");
+                        TabooTopic newTabooTopic = new TabooTopic(topic, description);
+                        tabooTopicsList.add(newTabooTopic);
+                        recyclerAdapterTaboo.notifyItemInserted(i);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    getTopicsError();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                getTopicsError();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                String token = User.getValue(User.Keys.token, getApplicationContext());
+                params.put("Authorization", "Bearer " + token);
+                return params;
+            }
+        };
+        VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
+    }
+
+    private void getTopicsError() {
+        Toast.makeText(getApplicationContext(), getString(R.string.taboo_topics_error), Toast.LENGTH_SHORT).show();
     }
 
     private void addTopic(String title, String description) {
