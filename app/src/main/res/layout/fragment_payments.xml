@@ -10,16 +10,9 @@
         android:orientation="vertical">
 
         <View
-            android:id="@+id/blankSpace"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_centerInParent="true" />
-
-        <View
             android:id="@+id/paymentsCircle"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_above="@id/blankSpace"
+            android:layout_width="@dimen/payments_circle_size"
+            android:layout_height="@dimen/payments_circle_size"
             android:layout_centerInParent="true"
             android:background="@drawable/payments_circle"
             android:transitionName="paymentsCircle" />
@@ -28,10 +21,8 @@
             android:id="@+id/textViewCredits"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/blankSpace"
-            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:gravity="center"
-            android:paddingBottom="50dp"
             android:text="Credits\n100"
             android:textAppearance="@android:style/TextAppearance.Large"
             android:textColor="@android:color/white" />
@@ -40,7 +31,7 @@
             android:id="@+id/buttonAddCredits"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/blankSpace"
+            android:layout_below="@id/paymentsCircle"
             android:layout_centerHorizontal="true"
             android:text="@string/add_credits"
             android:theme="@style/AppTheme.ButtonColored" />

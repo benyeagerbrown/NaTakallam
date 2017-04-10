@@ -1,21 +1,39 @@
 package com.globalappinitiative.natakallam;
 
 
-public class Bundles {
+class Bundles {
 
-    private String title;
+    private String name;
     private String description;
+    private int creditAmount;
+    private int price;
+    private int durationInDays;
 
-    public Bundles(String title, String description) {
-        this.title = title;
+    Bundles(String name, String description, int creditAmount, int price, int durationInDays) {
+        this.name = name;
         this.description = description;
+        this.creditAmount = creditAmount;
+        this.price = price;
+        this.durationInDays = durationInDays;
     }
 
-    public String getTitle() {
-        return this.title;
+    String getName() {
+        return this.name;
     }
 
-    public String getDescription() {
+    String getDescription() {
         return this.description;
+    }
+
+    int getCreditAmount() {
+        return this.creditAmount;
+    }
+
+    int getPrice() {
+        return this.price;
+    }
+
+    int getDurationInDays() {
+        return this.durationInDays;
     }
 }

@@ -48,23 +48,23 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
 
         String key = preference.getKey();
         switch (key) {
-            case PreferenceKeys.email:
+            case User.Keys.email:
                 startActivity(new Intent(getContext(), ChangeEmailActivity.class));
                 break;
-            case PreferenceKeys.password:
+            case User.Keys.password:
                 startActivity(new Intent(getContext(), ChangePasswordActivity.class));
                 break;
-            case PreferenceKeys.skype_id:
+            case User.Keys.skype_id:
                 break;
-            case PreferenceKeys.phone_number:
+            case User.Keys.phone_number:
                 break;
-            case PreferenceKeys.taboo_topics:
+            case User.Keys.taboo_topics:
                 startActivity(new Intent(getContext(), TabooTopicsActivity.class));
                 break;
-            case PreferenceKeys.about_us:
+            case User.Keys.about_us:
                 launchChromeTab();
                 break;
-            case PreferenceKeys.log_out:
+            case User.Keys.log_out:
                 logOut();
                 break;
         }

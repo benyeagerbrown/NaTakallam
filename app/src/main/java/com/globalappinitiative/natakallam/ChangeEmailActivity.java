@@ -84,7 +84,7 @@ public class ChangeEmailActivity extends AppCompatActivity implements View.OnCli
     private void setNewEmail() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(PreferenceKeys.email, editTextConfirmNewEmail.getText().toString());
+        editor.putString(User.Keys.email, editTextConfirmNewEmail.getText().toString());
         editor.apply();
     }
 }

@@ -23,26 +23,27 @@
             android:padding="@dimen/activity_horizontal_margin">
 
             <TextView
-                android:id="@+id/textViewBundleTitle"
+                android:id="@+id/textViewBundleName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                tools:text="Bundle 1" />
+                tools:text="Name" />
 
             <TextView
                 android:id="@+id/textViewBundleDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Description of Bundle 1" />
+                tools:text="Description" />
 
-            <Button
-                android:id="@+id/buttonBundlePurchase"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/textViewBundleCredits"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
                 android:layout_gravity="end"
-                android:text="Purchase"
-                android:theme="@style/AppTheme.ButtonBorderless" />
+                android:background="@drawable/ring"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                tools:text="100" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
