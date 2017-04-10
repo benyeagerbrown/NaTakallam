@@ -79,10 +79,6 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
 
     private void logOut() {
         showDialog(getString(R.string.log_out_title), getString(R.string.log_out_confirm));
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
     }
 
     private void showDialog(String title, String message) {
@@ -93,6 +89,10 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ((MainActivity) getActivity()).loggedOut();
+                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.clear();
+                        editor.apply();
                     }
                 })
                 .setNegativeButton(getString(R.string.cancel), null)
