@@ -4,9 +4,12 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
@@ -47,16 +50,16 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(@IdRes int tabId) {
                 if (tabId == R.id.tab_home) {
                     changeFragment(HOME_ID);
-                    toolbar.setBackgroundColor(getColor(R.color.colorPrimary));
+                    changeColor(R.color.colorPrimary, R.color.colorPrimaryDark);
                 } else if (tabId == R.id.tab_payments) {
                     changeFragment(PAYMENTS_ID);
-                    toolbar.setBackgroundColor(getColor(R.color.paymentsColor));
+                    changeColor(R.color.paymentsColor, R.color.paymentsColorDark);
                 } else if (tabId == R.id.tab_calendar) {
                     changeFragment(CALENDAR_ID);
-                    toolbar.setBackgroundColor(getColor(R.color.calendarColor));
+                    changeColor(R.color.calendarColor, R.color.calendarDark);
                 } else if (tabId == R.id.tab_settings) {
                     changeFragment(SETTINGS_ID);
-                    toolbar.setBackgroundColor(getColor(R.color.settingsColor));
+                    changeColor(R.color.settingsColor, R.color.settingsColorDark);
                 }
             }
         });
@@ -84,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void openProfile(View v) {
         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+    }
+
+    private void changeColor(int toolbarColor, int notificationColor) {
+        toolbar.setBackgroundColor(getColor(toolbarColor));
+        Window window = this.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(ContextCompat.getColor(this, notificationColor));
     }
 
     private void changeFragment(int currentFragmentIndex) {
