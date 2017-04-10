@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.roughike.bottombar.BottomBar;
@@ -17,11 +18,10 @@ public class MainActivity extends AppCompatActivity {
     static final int PAYMENTS_ID = 1;
     static final int CALENDAR_ID = 2;
     static final int SETTINGS_ID = 3;
-
-
+    int currentFragmentIndex = HOME_ID;
     static final String instanceKey = "currentFragmentIndex";
 
-    int currentFragmentIndex = HOME_ID;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +39,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
                 if (tabId == R.id.tab_home) {
                     changeFragment(HOME_ID);
+                    toolbar.setBackgroundColor(getColor(R.color.colorPrimary));
                 } else if (tabId == R.id.tab_payments) {
                     changeFragment(PAYMENTS_ID);
+                    toolbar.setBackgroundColor(getColor(R.color.paymentsColor));
                 } else if (tabId == R.id.tab_calendar) {
                     changeFragment(CALENDAR_ID);
+                    toolbar.setBackgroundColor(getColor(R.color.calendarColor));
                 } else if (tabId == R.id.tab_settings) {
                     changeFragment(SETTINGS_ID);
+                    toolbar.setBackgroundColor(getColor(R.color.settingsColor));
                 }
             }
         });
