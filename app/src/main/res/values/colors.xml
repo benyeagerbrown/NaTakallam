@@ -6,8 +6,11 @@
     <color name="addSessionColor">#448AFF</color>
     <color name="homeColor">#3F51B5</color>
     <color name="paymentsColor">#009688</color>
+    <color name="paymentsColorDark">#00695c</color>
     <color name="calendarColor">#F44336</color>
+    <color name="calendarDark">#b71c1c</color>
     <color name="settingsColor">#734879</color>
+    <color name="settingsColorDark">#513355</color>
     <color name="tabActiveColor">#ffffff</color>
     <color name="tabInactiveColor">#d7ccc8</color>
 
