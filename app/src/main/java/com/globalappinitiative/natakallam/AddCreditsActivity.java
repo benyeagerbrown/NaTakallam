@@ -36,15 +36,22 @@ public class AddCreditsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_credits);
 
-        paymentsCircle = findViewById(R.id.paymentsCircle);
+        setRecyclerView();
+        startEntryAnimation();
+        getBundles();
+    }
+
+    private void setRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        getBundles();
 
         recyclerAdapterBundles = new RecyclerAdapterBundles(allBundles);
         recyclerView.setAdapter(recyclerAdapterBundles);
+    }
 
+    private void startEntryAnimation() {
+        paymentsCircle = findViewById(R.id.paymentsCircle);
         Animation scale_up_full_screen = AnimationUtils.loadAnimation(this, R.anim.scale_up_full_screen);
         scale_up_full_screen.setAnimationListener(new Animation.AnimationListener() {
             @Override
