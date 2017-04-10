@@ -126,41 +126,7 @@ public class AddCreditsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Animation fade_in = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        fade_in.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-                recyclerView.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out));
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                Animation scale_down_full_screen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale_down_full_screen);
-                scale_down_full_screen.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        finish();
-                        overridePendingTransition(0, 0);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-                paymentsCircle.startAnimation(scale_down_full_screen);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        paymentsCircle.startAnimation(fade_in);
+        finish();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }
