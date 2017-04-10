@@ -17,10 +17,10 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/editTextUsername"
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="@string/email_title"
             android:inputType="textEmailAddress"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
@@ -34,7 +34,7 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Sign in"
+        android:text="@string/sign_in"
         android:theme="@style/AppTheme.ButtonColored" />
 
     <Button
@@ -54,6 +54,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Don't have an account? Sign up" />
+        android:text="@string/sign_up_prompt" />
 
 </LinearLayout>

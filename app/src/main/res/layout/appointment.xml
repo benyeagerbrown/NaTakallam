@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -15,26 +17,31 @@
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="32dp">
 
             <TextView
-                android:id="@+id/textViewTabooTopicTitle"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewCalendarDay"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/primary_text_light"
-                tools:text="Taboo topic" />
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                tools:text="March 31, 2017" />
 
             <TextView
-                android:id="@+id/textViewTabooTopicDescription"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewCalendarTime"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Description" />
+                tools:text="4:00PM EST" />
+
+            <TextView
+                android:id="@+id/textViewCalendarTutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                tools:text="Tutor: Brett" />
 
         </LinearLayout>
-
     </android.support.v7.widget.CardView>
-
 </LinearLayout>

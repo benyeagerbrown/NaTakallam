@@ -69,4 +69,14 @@
 
     <string name="empty_topic">Empty topic</string>
     <string name="empty_topic_message">Please add a non-empty topic.</string>
+
+    <string name="sign_in_error">Could not sign in, please try again later.</string>
+    <string name="signing_in">Signing in</string>
+    <string name="please_wait">Please wait</string>
+
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up_prompt">Don\'t have an account? Sign up</string>
+
+    <string name="bundles_error">Could not load bundles, please try again later.</string>
+    <string name="taboo_topics_error">Could not load taboo topics, please try again later.</string>
 </resources>
