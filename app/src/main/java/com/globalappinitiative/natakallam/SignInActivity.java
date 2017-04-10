@@ -120,6 +120,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                         User.setValue(User.Keys.timezone, user.getString(User.Keys.timezone), getApplicationContext());
                         User.setValue(User.Keys.type, user.getString(User.Keys.type), getApplicationContext());
                         User.setValue(User.Keys.token, data.getString(User.Keys.token), getApplicationContext());
+                        User.setValue(User.Keys.signedIn, "true", getApplicationContext());
                         goHome();
                     }
                 } catch (Exception e) {

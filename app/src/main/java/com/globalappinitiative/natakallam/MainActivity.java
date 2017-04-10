@@ -28,9 +28,13 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             currentFragmentIndex = savedInstanceState.getInt(instanceKey);
         } else {
-            currentFragmentIndex = HOME_ID;
-            startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
+            String isSignedIn = User.getValue(User.Keys.signedIn, this);
+            if (!isSignedIn.equals("true")) {
+                currentFragmentIndex = HOME_ID;
+                startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
+            }
         }
+
         changeFragment(currentFragmentIndex);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

@@ -40,6 +40,7 @@ class User {
         static final String type = "type";
         static final String token = "token";
 
+        static final String signedIn = "signed_in";
         static final String password = "password";
         static final String taboo_topics = "taboo_topics";
         static final String about_us = "about_us";
