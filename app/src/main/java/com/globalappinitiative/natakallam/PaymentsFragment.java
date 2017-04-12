@@ -26,7 +26,7 @@ public class PaymentsFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        PaymentsFragmentView = inflater.inflate(R.layout.fragment_payments, container, false);         // Inflate the layout for this fragment
+        PaymentsFragmentView = inflater.inflate(R.layout.fragment_payments, container, false);
         textViewCredits = (TextView) PaymentsFragmentView.findViewById(R.id.textViewCredits);
         buttonAddCredits = (Button) PaymentsFragmentView.findViewById(R.id.buttonAddCredits);
         buttonAddCredits.setOnClickListener(this);

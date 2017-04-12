@@ -7,14 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
-import java.util.ArrayList;
+import java.util.List;
 
 class RecyclerAdapterTaboo extends RecyclerView.Adapter<RecyclerAdapterTaboo.TabooTopicsHolder> {
 
-    private ArrayList<TabooTopic> tabooTopicsList;
+    private List<TabooTopic> tabooTopicsList;
 
-    RecyclerAdapterTaboo(ArrayList<TabooTopic> tabooTopicsList) {
+    RecyclerAdapterTaboo(List<TabooTopic> tabooTopicsList) {
         this.tabooTopicsList = tabooTopicsList;
     }
 
@@ -38,17 +37,17 @@ class RecyclerAdapterTaboo extends RecyclerView.Adapter<RecyclerAdapterTaboo.Tab
     static class TabooTopicsHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewTabooTopicTitle;
-        private TextView textViewTabooTopicDescription;
+        //private TextView textViewTabooTopicDescription;
 
         TabooTopicsHolder(View v) {
             super(v);
             textViewTabooTopicTitle = (TextView) v.findViewById(R.id.textViewTabooTopicTitle);
-            textViewTabooTopicDescription = (TextView) v.findViewById(R.id.textViewTabooTopicDescription);
+            //textViewTabooTopicDescription = (TextView) v.findViewById(R.id.textViewTabooTopicDescription);
         }
 
         void bindTabooTopic(TabooTopic tabooTopic) {
             textViewTabooTopicTitle.setText(tabooTopic.getTopic());
-            textViewTabooTopicDescription.setText(tabooTopic.getDescription());
+            //textViewTabooTopicDescription.setText(tabooTopic.getDescription());
         }
     }
 }

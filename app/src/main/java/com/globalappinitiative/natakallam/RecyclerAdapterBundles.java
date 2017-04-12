@@ -1,21 +1,19 @@
 package com.globalappinitiative.natakallam;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 class RecyclerAdapterBundles extends RecyclerView.Adapter<RecyclerAdapterBundles.BundlesHolder> {
 
-    private ArrayList<Bundles> bundleList;
+    private List<Bundle> bundleList;
 
-    RecyclerAdapterBundles(ArrayList<Bundles> bundles) {
+    RecyclerAdapterBundles(List<Bundle> bundles) {
         this.bundleList = bundles;
     }
 
@@ -27,7 +25,7 @@ class RecyclerAdapterBundles extends RecyclerView.Adapter<RecyclerAdapterBundles
 
     @Override
     public void onBindViewHolder(RecyclerAdapterBundles.BundlesHolder holder, int position) {
-        Bundles bundle = bundleList.get(position);
+        Bundle bundle = bundleList.get(position);
         holder.bindBundle(bundle);
     }
 
@@ -50,10 +48,10 @@ class RecyclerAdapterBundles extends RecyclerView.Adapter<RecyclerAdapterBundles
             bundleCredits.setOnTouchListener(this);
         }
 
-        void bindBundle(Bundles bundle) {
-            bundleTitle.setText(bundle.getName());
-            bundleDescription.setText(bundle.getDescription());
-            bundleCredits.setText(Integer.toString(bundle.getCreditAmount()));
+        void bindBundle(Bundle bundle) {
+            bundleTitle.setText(bundle.getBundleName().getName());
+            bundleDescription.setText(bundle.getBundleName().getDescription());
+            bundleCredits.setText(Integer.toString(bundle.getBundleName().getCreditAmount()));
         }
 
         @Override

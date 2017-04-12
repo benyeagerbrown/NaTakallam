@@ -4,7 +4,7 @@ package com.globalappinitiative.natakallam;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class Cp_ {
 
     @SerializedName("id")
     @Expose

@@ -12,9 +12,8 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-
-import org.json.JSONObject;
+import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -92,49 +91,25 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         final String sign_in_url_with_params = sign_in_base_url
                 + "email=" + editTextEmail.getText().toString()
                 + "&password=" + editTextPassword.getText().toString();
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, sign_in_url_with_params, null, new Response.Listener<JSONObject>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, sign_in_url_with_params, new Response.Listener<String>() {
             @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    boolean isError = response.getBoolean("errors");
-                    if (isError) {
-                        signInError();
-                    } else {
-                        JSONObject data = response.getJSONObject("data");
-                        JSONObject user = data.getJSONObject("user");
-                        User.setValue(User.Keys.id, Integer.toString(user.getInt(User.Keys.id)), getApplicationContext());
-                        User.setValue(User.Keys.first_name, user.getString(User.Keys.first_name), getApplicationContext());
-                        User.setValue(User.Keys.last_name, user.getString(User.Keys.last_name), getApplicationContext());
-                        User.setValue(User.Keys.email, user.getString(User.Keys.email), getApplicationContext());
-                        User.setValue(User.Keys.avatar_file_name, user.getString(User.Keys.avatar_file_name), getApplicationContext());
-                        User.setValue(User.Keys.phone_number, user.getString(User.Keys.phone_number), getApplicationContext());
-                        User.setValue(User.Keys.skype_id, user.getString(User.Keys.skype_id), getApplicationContext());
-                        User.setValue(User.Keys.dob, user.getString(User.Keys.dob), getApplicationContext());
-                        User.setValue(User.Keys.title, user.getString(User.Keys.title), getApplicationContext());
-                        User.setValue(User.Keys.profession, user.getString(User.Keys.profession), getApplicationContext());
-                        User.setValue(User.Keys.gender, user.getString(User.Keys.gender), getApplicationContext());
-                        User.setValue(User.Keys.hobbies, user.getString(User.Keys.hobbies), getApplicationContext());
-                        User.setValue(User.Keys.short_bio, user.getString(User.Keys.short_bio), getApplicationContext());
-                        User.setValue(User.Keys.heard_about_us_from, user.getString(User.Keys.heard_about_us_from), getApplicationContext());
-                        User.setValue(User.Keys.extra_details, user.getString(User.Keys.extra_details), getApplicationContext());
-                        User.setValue(User.Keys.timezone, user.getString(User.Keys.timezone), getApplicationContext());
-                        User.setValue(User.Keys.type, user.getString(User.Keys.type), getApplicationContext());
-                        User.setValue(User.Keys.token, data.getString(User.Keys.token), getApplicationContext());
-                        User.setValue(User.Keys.signedIn, "true", getApplicationContext());
-                        goHome();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+            public void onResponse(String response) {
+                Gson gson = new Gson();
+                UserDataInstance.set(gson.fromJson(response, UserData.class));
+                if (UserDataInstance.get().getErrors()) {
                     signInError();
+                } else {
+                    goHome();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
                 signInError();
             }
         });
-        VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
+        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
     }
 
     private void signInError() {
