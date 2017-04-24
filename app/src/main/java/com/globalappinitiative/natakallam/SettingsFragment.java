@@ -48,23 +48,23 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
 
         String key = preference.getKey();
         switch (key) {
-            case User.Keys.email:
+            case PreferenceKeys.email:
                 startActivity(new Intent(getContext(), ChangeEmailActivity.class));
                 break;
-            case User.Keys.password:
+            case PreferenceKeys.password:
                 startActivity(new Intent(getContext(), ChangePasswordActivity.class));
                 break;
-            case User.Keys.skype_id:
+            case PreferenceKeys.skype_id:
                 break;
-            case User.Keys.phone_number:
+            case PreferenceKeys.phone_number:
                 break;
-            case User.Keys.taboo_topics:
+            case PreferenceKeys.taboo_topics:
                 startActivity(new Intent(getContext(), TabooTopicsActivity.class));
                 break;
-            case User.Keys.about_us:
+            case PreferenceKeys.about_us:
                 launchChromeTab();
                 break;
-            case User.Keys.log_out:
+            case PreferenceKeys.log_out:
                 logOut();
                 break;
         }
@@ -79,10 +79,6 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
 
     private void logOut() {
         showDialog(getString(R.string.log_out_title), getString(R.string.log_out_confirm));
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
     }
 
     private void showDialog(String title, String message) {
@@ -93,6 +89,10 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ((MainActivity) getActivity()).loggedOut();
+                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.clear();
+                        editor.apply();
                     }
                 })
                 .setNegativeButton(getString(R.string.cancel), null)

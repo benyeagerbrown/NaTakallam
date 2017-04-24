@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             currentFragmentIndex = savedInstanceState.getInt(instanceKey);
         } else {
-            String isSignedIn = User.getValue(User.Keys.signedIn, this);
-            if (!isSignedIn.equals("true")) {
+            //String isSignedIn = User.getValue(User.Keys.signedIn, this);
+            //if (!isSignedIn.equals("true")) {
                 currentFragmentIndex = HOME_ID;
                 startActivityForResult(new Intent(this, SignInActivity.class), SIGN_IN);
-            }
+            //}
         }
 
         changeFragment(currentFragmentIndex);

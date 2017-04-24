@@ -1,28 +1,32 @@
+
 package com.globalappinitiative.natakallam;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-class TabooTopic {
+public class TabooTopic {
+
+    @SerializedName("topic")
+    @Expose
     private String topic;
-    private String description;
+    @SerializedName("added_at")
+    @Expose
+    private AddedAt addedAt;
 
-    TabooTopic(String topic, String description) {
-        this.topic = topic;
-        this.description = description;
+    public String getTopic() {
+        return topic;
     }
 
-    String getTopic() {
-        return this.topic;
-    }
-
-    String getDescription() {
-        return this.description;
-    }
-
-    void setTopic(String topic) {
+    public void setTopic(String topic) {
         this.topic = topic;
     }
 
-    void setDescription(String description) {
-        this.description = description;
+    public AddedAt getAddedAt() {
+        return addedAt;
     }
+
+    public void setAddedAt(AddedAt addedAt) {
+        this.addedAt = addedAt;
+    }
+
 }
