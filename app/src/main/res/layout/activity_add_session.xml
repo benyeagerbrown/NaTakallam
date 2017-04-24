@@ -75,7 +75,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:theme="@style/AppTheme.ButtonColored"
-        android:onClick="returnHome"/>
+        android:onClick="confirmSession"/>
 
     <Button
         android:id="@+id/cancel"

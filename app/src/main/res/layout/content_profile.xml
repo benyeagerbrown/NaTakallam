@@ -57,8 +57,155 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp">
-            <TableRow>
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_horizontal">
+            <TableRow
+                android:layout_marginBottom="10dp">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_calendar"
+                    app:civ_border_color="@color/homeColor"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="false"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#8BC34A"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_profile"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_email"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_marginBottom="10dp">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_calendar"
+                    app:civ_border_color="@color/homeColor"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="false"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#8BC34A"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_profile"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_email"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_marginBottom="10dp">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_calendar"
+                    app:civ_border_color="@color/homeColor"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="false"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#8BC34A"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_profile"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_email"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_marginBottom="10dp">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_calendar"
+                    app:civ_border_color="@color/homeColor"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="false"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#8BC34A"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_profile"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_email"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_marginBottom="10dp">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_calendar"
+                    app:civ_border_color="@color/homeColor"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="false"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#8BC34A"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_profile"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/example_email"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_marginBottom="10dp">
                 <com.mikhaellopez.circularimageview.CircularImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"

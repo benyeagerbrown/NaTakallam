@@ -79,4 +79,5 @@
 
     <string name="bundles_error">Could not load bundles, please try again later.</string>
     <string name="taboo_topics_error">Could not load taboo topics, please try again later.</string>
+    <string name="books_session_error">Could not book session, please try again later.</string>
 </resources>
